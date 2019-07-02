@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="63795" started-at="2019-07-02T19:33:15Z" finished-at="2019-07-02T19:34:18Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="63795" started-at="2019-07-02T19:33:15Z" finished-at="2019-07-02T19:34:18Z">
+      <class name="com.automation.codinground.HotelBookingTest">
+        <test-method status="PASS" signature="shouldBeAbleToSearchForHotels()[pri:0, instance:com.automation.codinground.HotelBookingTest@62043840]" name="shouldBeAbleToSearchForHotels" duration-ms="10892" started-at="2019-07-02T19:34:01Z" finished-at="2019-07-02T19:34:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldBeAbleToSearchForHotels -->
+      </class> <!-- com.automation.codinground.HotelBookingTest -->
+      <class name="com.automation.codinground.SignInTest">
+        <test-method status="PASS" signature="shouldThrowAnErrorIfSignInDetailsAreMissing()[pri:0, instance:com.automation.codinground.SignInTest@5315b42e]" name="shouldThrowAnErrorIfSignInDetailsAreMissing" duration-ms="5797" started-at="2019-07-02T19:34:12Z" finished-at="2019-07-02T19:34:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldThrowAnErrorIfSignInDetailsAreMissing -->
+      </class> <!-- com.automation.codinground.SignInTest -->
+      <class name="com.automation.codinground.FlightBookingTest">
+        <test-method status="PASS" signature="testThatResultsAppearForAOneWayJourneyBeforeTest()[pri:0, instance:com.automation.codinground.FlightBookingTest@246ae04d]" name="testThatResultsAppearForAOneWayJourneyBeforeTest" is-config="true" duration-ms="18790" started-at="2019-07-02T19:33:15Z" finished-at="2019-07-02T19:33:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testThatResultsAppearForAOneWayJourneyBeforeTest -->
+        <test-method status="PASS" signature="testThatResultsAppearForAOneWayJourneyBeforeTest()[pri:0, instance:com.automation.codinground.HotelBookingTest@62043840]" name="testThatResultsAppearForAOneWayJourneyBeforeTest" is-config="true" duration-ms="2290" started-at="2019-07-02T19:33:33Z" finished-at="2019-07-02T19:33:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testThatResultsAppearForAOneWayJourneyBeforeTest -->
+        <test-method status="PASS" signature="testThatResultsAppearForAOneWayJourneyBeforeTest()[pri:0, instance:com.automation.codinground.SignInTest@5315b42e]" name="testThatResultsAppearForAOneWayJourneyBeforeTest" is-config="true" duration-ms="1953" started-at="2019-07-02T19:33:36Z" finished-at="2019-07-02T19:33:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testThatResultsAppearForAOneWayJourneyBeforeTest -->
+        <test-method status="PASS" signature="testThatResultsAppearForAOneWayJourney()[pri:0, instance:com.automation.codinground.FlightBookingTest@246ae04d]" name="testThatResultsAppearForAOneWayJourney" duration-ms="23227" started-at="2019-07-02T19:33:38Z" finished-at="2019-07-02T19:34:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testThatResultsAppearForAOneWayJourney -->
+        <test-method status="PASS" signature="testThatResultsAppearForAOneWayJourneyAfterTest()[pri:0, instance:com.automation.codinground.FlightBookingTest@246ae04d]" name="testThatResultsAppearForAOneWayJourneyAfterTest" is-config="true" duration-ms="835" started-at="2019-07-02T19:34:17Z" finished-at="2019-07-02T19:34:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testThatResultsAppearForAOneWayJourneyAfterTest -->
+        <test-method status="PASS" signature="shouldThrowAnErrorIfSignInDetailsAreMissingAfterTest()[pri:0, instance:com.automation.codinground.SignInTest@5315b42e]" name="shouldThrowAnErrorIfSignInDetailsAreMissingAfterTest" is-config="true" duration-ms="0" started-at="2019-07-02T19:34:18Z" finished-at="2019-07-02T19:34:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldThrowAnErrorIfSignInDetailsAreMissingAfterTest -->
+        <test-method status="PASS" signature="shouldBeAbleToSearchForHotelsAfterTest()[pri:0, instance:com.automation.codinground.HotelBookingTest@62043840]" name="shouldBeAbleToSearchForHotelsAfterTest" is-config="true" duration-ms="0" started-at="2019-07-02T19:34:18Z" finished-at="2019-07-02T19:34:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldBeAbleToSearchForHotelsAfterTest -->
+      </class> <!-- com.automation.codinground.FlightBookingTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>

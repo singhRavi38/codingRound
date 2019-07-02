@@ -1,91 +1,70 @@
 package com.automation.codinground;
 
-import com.sun.javafx.PlatformUtil;
+import framework_lib.DriverFactory;
+import framework_lib.Resusable_Lib;
+import uimap.Uimap_FlightsPage;
+import uimap.Uimap_HotelsPage;
+import uimap.Uimap_LoginPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import java.util.List;
 	
 public class FlightBookingTest {
 
-    WebDriver driver = new ChromeDriver();
-
-
-    @Test
-    public void testThatResultsAppearForAOneWayJourney() {
-
-        setDriverPath();
+	WebDriver driver;
+	Uimap_FlightsPage flightPg;
+	Uimap_HotelsPage hotelPg;
+	Uimap_LoginPage loginPg;
+	Resusable_Lib Reusable;
+	
+	@BeforeTest
+	public void testThatResultsAppearForAOneWayJourneyBeforeTest(){
+		Reusable = new Resusable_Lib();
+		flightPg = new Uimap_FlightsPage();
+		hotelPg = new Uimap_HotelsPage();
+		loginPg = new Uimap_LoginPage();
+    	driver = DriverFactory.getInstance().getDriver();    	
         driver.get("https://www.cleartrip.com/");
-        waitFor(2000);
-        driver.findElement(By.id("OneWay")).click();
+	}
 
-        driver.findElement(By.id("FromTag")).clear();
-        driver.findElement(By.id("FromTag")).sendKeys("Bangalore");
-
+    @SuppressWarnings("static-access")
+	@Test
+    public void testThatResultsAppearForAOneWayJourney() {    	
+    	
+    	Reusable.waitForPageLoad(driver);
+    	flightPg.oneWayRadioBtn.click();
+    	flightPg.originTextbox.clear();
+    	flightPg.originTextbox.sendKeys("Bangalore");
+   	
         //wait for the auto complete options to appear for the origin
+        Reusable.waitForPageLoad(driver);
+        flightPg.originOptionsList.get(0).click();
 
-        waitFor(2000);
-        List<WebElement> originOptions = driver.findElements(By.xpath("//ul[@id='ui-id-1']/li/a"));
-        originOptions.get(0).click();
-
-        driver.findElement(By.id("ToTag")).clear();
-        driver.findElement(By.id("ToTag")).sendKeys("Delhi");
+        flightPg.destinationTextBox.clear();
+        flightPg.destinationTextBox.sendKeys("Delhi");
 
         //wait for the auto complete options to appear for the destination
-
-        waitFor(2000);
+        Reusable.waitForPageLoad(driver);
         //select the first item from the destination auto complete list
-        List<WebElement> destinationOptions = driver.findElements(By.xpath("//ul[@id='ui-id-2']/li/a"));
-        destinationOptions.get(0).click();
-
-        driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/div[1]/table/tbody/tr[3]/td[7]/a")).click();
+        flightPg.destinationOptionsList.get(0).click();
+        
+        Reusable.waitForPageLoad(driver);
+        Reusable.selectDate(23, "December", 2019);
 
         //all fields filled in. Now click on search
-        driver.findElement(By.id("SearchBtn")).click();
+        flightPg.searchBtn.click();
 
-        waitFor(5000);
+        Reusable.waitForPageLoad(driver);
         //verify that result appears for the provided journey search
-        Assert.assertTrue(isElementPresent(By.className("searchSummary")));
+        Assert.assertTrue(Reusable.isElementPresent(By.className("searchSummary")));
 
+    }
+    @AfterTest
+    public void testThatResultsAppearForAOneWayJourneyAfterTest() {
         //close the browser
         driver.quit();
-
-    }
-
-
-    private void waitFor(int durationInMilliSeconds) {
-        try {
-            Thread.sleep(durationInMilliSeconds);
-        } catch (InterruptedException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
-    }
-
-
-    private boolean isElementPresent(By by) {
-        try {
-            driver.findElement(by);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-    }
-
-    private void setDriverPath() {
-        if (PlatformUtil.isMac()) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver");
-        }
-        if (PlatformUtil.isWindows()) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-        }
-        if (PlatformUtil.isLinux()) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver_linux");
-        }
     }
 }

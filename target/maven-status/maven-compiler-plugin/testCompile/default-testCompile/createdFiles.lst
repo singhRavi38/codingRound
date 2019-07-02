@@ -1,4 +1,3 @@
-com\automation\codinground\AppTest.class
 com\automation\codinground\FlightBookingTest.class
-com\automation\codinground\SignInTest.class
 com\automation\codinground\HotelBookingTest.class
+com\automation\codinground\SignInTest.class

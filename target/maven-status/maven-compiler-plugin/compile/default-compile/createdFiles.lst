@@ -1,1 +1,7 @@
+uimap\Uimap_HotelsPage.class
+uimap\Uimap_FlightsPage.class
+uimap\Uimap_LoginPage.class
+framework_lib\DriverFactory.class
+framework_lib\Resusable_Lib.class
 com\automation\codinground\App.class
+framework_lib\DriverFactory$1.class
